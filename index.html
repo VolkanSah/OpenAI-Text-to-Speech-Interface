@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text-to-Speech mit OpenAI</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        textarea {
+            width: 80%;
+            height: 100px;
+            font-size: 16px;
+            padding: 10px;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text-to-Speech mit OpenAI</h1>
+    <textarea id="text-input" placeholder="Geben Sie hier Ihren Text ein..."></textarea>
+    <br>
+    <button onclick="generateSpeech()">Sprachausgabe erstellen</button>
+
+    <script>
+        function generateSpeech() {
+            var textInput = document.getElementById("text-input").value;
+            fetch('tts.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'text=' + encodeURIComponent(textInput)
+            })
+            .then(response => response.blob())
+            .then(blob => {
+                var url = URL.createObjectURL(blob);
+                var a = document.createElement("a");
+                a.href = url;
+                a.download = "speech.mp3";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            })
+            .catch(error => {
+                console.error("Fehler beim Erstellen der Sprachausgabe:", error);
+            });
+        }
+    </script>
+</body>
+</html>
