@@ -41,7 +41,7 @@ This repository hosts a web application that allows users to convert text to spe
 - Navigate to `index.html` in your web browser.
 - Enter the text you want to convert to speech in the textarea.
 - Choose a voice from the available options (not yet implemented in UI, see notes for adding this feature).
-- Click the "Sprachausgabe erstellen" button.
+- Click the button.
 - The speech will automatically download as "speech.mp3". [Test speech with voice Alloy](test_speech.mp3)
 
 ## Adding Voice Selection Feature (soon)
