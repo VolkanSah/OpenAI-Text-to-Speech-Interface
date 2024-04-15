@@ -1,8 +1,8 @@
-# OpenAI GPT Text-to-Speech Interface
+# OpenAI Text-to-Speech Interface
 
 ![Text to Speech with OpenAi](text-to-speech.png)
 
-This repository hosts a web application that allows users to convert text to speech using OpenAI's GPT models. It comprises a simple HTML interface for text input and a PHP backend to handle API interactions securely.
+This repository hosts a web application that allows users to convert text to speech using OpenAI's whisper models. It comprises a simple HTML interface for text input and a PHP backend to handle API interactions securely.
 
 ## Features
 
